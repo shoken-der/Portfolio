@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,22 +11,24 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-    <link rel="stylesheet" href="css/home.css?v=1.5">
-    <link rel="stylesheet" href="css/projects.css?v=1.5">
+    <link rel="stylesheet" href="css/home.css?v=1.6">
+    <link rel="stylesheet" href="css/projects.css?v=1.6">
     <style>
         #projectModal.modal {
             display: none;
             position: fixed;
-            top: 0;
+            top: 80px;
+            /* Positioned below the fixed header */
             left: 0;
             width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.9) !important;
-            z-index: 999999999 !important;
+            height: calc(100vh - 80px);
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9000;
+            /* Lower than header z-index 9999 */
             opacity: 0;
             transition: opacity 0.3s ease;
             box-sizing: border-box;
-            padding: 100px 20px 40px 20px !important;
+            padding: 40px 20px;
             overflow-y: auto;
         }
 
@@ -37,11 +40,10 @@
         .modal-content {
             background: white;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 3rem 2rem 2rem 2rem;
             border-radius: 1rem;
             max-width: 800px;
             width: 90%;
-            max-height: none;
             transform: translateY(-20px);
             opacity: 0;
             transition: all 0.3s ease;
@@ -49,10 +51,19 @@
             flex-direction: column;
             gap: 1.5rem;
             position: relative;
+            /* Context for close button */
+        }
+
+        .modal-content-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            height: 100%;
         }
 
         .modal-content::-webkit-scrollbar {
-            display: none;  /* Chrome, Safari and Opera */
+            display: none;
+            /* Chrome, Safari and Opera */
         }
 
         .modal.active .modal-content {
@@ -61,16 +72,16 @@
         }
 
         .close-modal {
-            position: fixed !important;
-            top: 20px !important;
-            right: 30px !important;
-            font-size: 4rem !important;
-            color: #ffb4a2 !important;
+            position: absolute !important;
+            top: 0.5rem !important;
+            right: 1rem !important;
+            font-size: 2.5rem !important;
+            color: #b5838d !important;
+            /* Themed color for visibility */
             cursor: pointer;
-            transition: transform 0.3s ease;
-            z-index: 1000000000 !important;
+            transition: all 0.3s ease;
+            z-index: 100 !important;
             line-height: 1;
-            text-shadow: 0 0 20px rgba(0,0,0,1);
             font-weight: bold;
         }
 
@@ -249,6 +260,7 @@
         }
     </style>
 </head>
+
 <body class="bg-gradient-to-br from-[var(--peach-puff)] to-[var(--pastel-pink)] text-[var(--dark-text)] font-sans">
     <!-- Particles.js Background -->
     <div id="particles-js" class="fixed top-0 left-0 w-full h-full z-0"></div>
@@ -262,41 +274,66 @@
     <main class="pt-24 px-[10%] relative z-10 min-h-screen pb-16">
         <section class="projects-section">
             <div class="text-center mb-12" data-aos="fade-down">
-                <h1 class="text-5xl mt-4 h-16 font-bold mb-2 bg-gradient-to-r from-[var(--pastel-pink)] to-[var(--dark-text)] bg-clip-text text-transparent">
+                <h1
+                    class="text-5xl mt-4 h-16 font-bold mb-2 bg-gradient-to-r from-[var(--pastel-pink)] to-[var(--dark-text)] bg-clip-text text-transparent">
                     My Projects
                 </h1>
-                <div class="w-24 h-1 bg-gradient-to-r from-[var(--pastel-pink)] to-[var(--dark-text)] mx-auto rounded-full"></div>
+                <div
+                    class="w-24 h-1 bg-gradient-to-r from-[var(--pastel-pink)] to-[var(--dark-text)] mx-auto rounded-full">
+                </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- KickSense -->
-                <div class="project-card bg-white/10 backdrop-blur-lg rounded-lg p-4 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-transparent hover:border-[#f8e1e4] relative overflow-hidden group" data-aos="fade-up">
-                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                    <div class="thumbnail-container relative overflow-hidden rounded-lg mb-4 group-hover:shadow-md transition-all duration-300">
-                        <img src="assets/images/chatbot (1).jpg" alt="KickSense Project" class="w-full h-48 object-cover rounded-lg transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="project-card bg-white/10 backdrop-blur-lg rounded-lg p-4 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-transparent hover:border-[#f8e1e4] relative overflow-hidden group"
+                    data-aos="fade-up">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
                     </div>
-                    <h2 class="text-xl font-semibold mb-2 text-[#2d3748] group-hover:text-[#1a202c] transition-colors duration-300">KickSense</h2>
-                    <p class="text-gray-600 mb-2 group-hover:text-gray-700 transition-colors duration-300">Full-stack sneaker price tracking platform with real-time alerts</p>
+                    <div
+                        class="thumbnail-container relative overflow-hidden rounded-lg mb-4 group-hover:shadow-md transition-all duration-300">
+                        <img src="assets/images/chatbot (1).jpg" alt="KickSense Project"
+                            class="w-full h-48 object-cover rounded-lg transform group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                    </div>
+                    <h2
+                        class="text-xl font-semibold mb-2 text-[#2d3748] group-hover:text-[#1a202c] transition-colors duration-300">
+                        KickSense</h2>
+                    <p class="text-gray-600 mb-2 group-hover:text-gray-700 transition-colors duration-300">Full-stack
+                        sneaker price tracking platform with real-time alerts</p>
                     <div class="flex gap-3 flex-wrap">
                         <button class="view-details-btn" data-project="kicksense">View Details</button>
-                        <a href="https://github.com/shoken-der/KickSense-Full-Stack-Sneaker-Price-Tracking-Platform" target="_blank" rel="noopener noreferrer" class="view-details-btn flex items-center gap-2">
+                        <a href="https://github.com/shoken-der/KickSense-Full-Stack-Sneaker-Price-Tracking-Platform"
+                            target="_blank" rel="noopener noreferrer" class="view-details-btn flex items-center gap-2">
                             <i class="fab fa-github"></i> GitHub
                         </a>
                     </div>
                 </div>
 
                 <!-- Bank Account Console -->
-                <div class="project-card bg-white/10 backdrop-blur-lg rounded-lg p-4 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-transparent hover:border-[#f8e1e4] relative overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                    <div class="thumbnail-container relative overflow-hidden rounded-lg mb-4 group-hover:shadow-md transition-all duration-300">
-                        <img src="assets/images/jconsole.jpg" alt="Jenkins Server Project" class="w-full h-48 object-cover rounded-lg transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="project-card bg-white/10 backdrop-blur-lg rounded-lg p-4 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-transparent hover:border-[#f8e1e4] relative overflow-hidden group"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
                     </div>
-                    <h2 class="text-xl font-semibold mb-2 text-[#2d3748] group-hover:text-[#1a202c] transition-colors duration-300">Bank Account Console</h2>
-                    <p class="text-gray-600 mb-2 group-hover:text-gray-700 transition-colors duration-300">Simulates Simple Bank Account Facilities using OOPS</p>
+                    <div
+                        class="thumbnail-container relative overflow-hidden rounded-lg mb-4 group-hover:shadow-md transition-all duration-300">
+                        <img src="assets/images/jconsole.jpg" alt="Jenkins Server Project"
+                            class="w-full h-48 object-cover rounded-lg transform group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                    </div>
+                    <h2
+                        class="text-xl font-semibold mb-2 text-[#2d3748] group-hover:text-[#1a202c] transition-colors duration-300">
+                        Bank Account Console</h2>
+                    <p class="text-gray-600 mb-2 group-hover:text-gray-700 transition-colors duration-300">Simulates
+                        Simple Bank Account Facilities using OOPS</p>
                     <div class="flex gap-3 flex-wrap">
                         <button class="view-details-btn" data-project="jenkins">View Details</button>
-                        <a href="https://github.com/shoken-der/BankiFy" target="_blank" rel="noopener noreferrer" class="view-details-btn flex items-center gap-2">
+                        <a href="https://github.com/shoken-der/BankiFy" target="_blank" rel="noopener noreferrer"
+                            class="view-details-btn flex items-center gap-2">
                             <i class="fab fa-github"></i> GitHub
                         </a>
                     </div>
@@ -305,11 +342,10 @@
         </section>
     </main>
 
-    <!-- Modal -->
     <div class="modal" id="projectModal">
-        <span class="close-modal">&times;</span>
         <div class="modal-content">
-            <div class="flex flex-col">
+            <span class="close-modal">&times;</span>
+            <div class="modal-content-inner">
                 <div class="modal-image-container">
                     <img id="modalImage" src="" alt="" class="w-full">
                 </div>
@@ -323,8 +359,8 @@
         </div>
     </div>
 
-    <script src="js/header.js?v=1.5"></script>
-    <script src="js/hero.js?v=1.5"></script>
+    <script src="js/header.js?v=1.6"></script>
+    <script src="js/hero.js?v=1.6"></script>
     <script>
         // Project details data
         const projectDetails = {
@@ -362,7 +398,7 @@
                 tags: ["Python", "Streamlit"],
                 image: "assets/images/chatbot (1).jpg"
             },
-            
+
             jenkins: {
                 title: "Bank Account Console",
                 description: "Similates Simple Bank Account Facilities using OOPS",
@@ -371,7 +407,7 @@
                     "Implemented features like account creation, balance inquiry, deposits, and withdrawls",
                     "Utilized Java's OOP concepts such as iheritance, polymorphism, and encapsulation to ensure code reusablity and maintainability",
                 ],
-                tags: ["JAVA", "OOPS'"],
+                tags: ["JAVA", "OOPS"],
                 image: "assets/images/jconsole.jpg"
             }
         };
@@ -439,10 +475,10 @@
         });
 
         // Make all content unselectable
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             function makeUnselectable(elements) {
                 elements.forEach(element => {
-                    if (element.tagName === 'A' || element.tagName === 'BUTTON' || 
+                    if (element.tagName === 'A' || element.tagName === 'BUTTON' ||
                         element.tagName === 'INPUT' || element.tagName === 'TEXTAREA' ||
                         element.tagName === 'SELECT' || element.classList.contains('download-btn') ||
                         element.classList.contains('badge-toggle')) {
@@ -475,7 +511,7 @@
         });
 
         // Load header
-        fetch('header.html?v=1.5')
+        fetch('header.html?v=1.6')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
@@ -605,16 +641,16 @@
             'rgba(181, 131, 141, 0.4)',
             'rgba(109, 104, 117, 0.4)'
         ];
-        
+
         for (let i = 0; i < 25; i++) {
             const element = document.createElement('div');
             element.classList.add('floating-element');
-            
+
             // Random size between 10px and 40px
             const size = Math.random() * 30 + 10;
             element.style.width = `${size}px`;
             element.style.height = `${size}px`;
-            
+
             // Random shape
             const shape = shapes[Math.floor(Math.random() * shapes.length)];
             if (shape === 'triangle') {
@@ -625,23 +661,24 @@
             } else if (shape === 'blob') {
                 element.style.borderRadius = '50% 30% 70% 40% / 60% 40% 60% 40%';
             }
-            
+
             // Random color
             element.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-            
+
             // Random position
             element.style.left = `${Math.random() * 100}%`;
             element.style.bottom = `-${size}px`;
-            
+
             // Random animation duration between 10s and 30s
             const duration = Math.random() * 20 + 10;
             element.style.animationDuration = `${duration}s`;
-            
+
             // Random delay
             element.style.animationDelay = `${Math.random() * 10}s`;
-            
+
             floatingContainer.appendChild(element);
         }
     </script>
 </body>
+
 </html>
