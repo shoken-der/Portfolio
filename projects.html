@@ -18,21 +18,19 @@
             display: none;
             position: fixed;
             top: 80px;
-            /* Positioned below the fixed header */
             left: 0;
             width: 100vw;
             height: calc(100vh - 80px);
             background: rgba(0, 0, 0, 0.7);
-            z-index: 9000;
-            /* Lower than header z-index 9999 */
+            z-index: 10001 !important;
             opacity: 0;
             transition: opacity 0.3s ease;
             box-sizing: border-box;
-            padding: 40px 20px;
+            padding: 2.5rem 1rem;
             overflow-y: auto;
         }
 
-        .modal.active {
+        #projectModal.modal.active {
             display: flex;
             opacity: 1;
         }
