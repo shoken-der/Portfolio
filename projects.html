@@ -19,15 +19,15 @@
             position: fixed;
             top: 80px;
             left: 0;
-            width: 100vw;
+            width: 100%;
             height: calc(100vh - 80px);
             background: rgba(0, 0, 0, 0.7);
             z-index: 10001 !important;
             opacity: 0;
             transition: opacity 0.3s ease;
-            box-sizing: border-box;
-            padding: 2.5rem 1rem;
-            overflow-y: auto;
+            display: flex; /* Ensure centering works when active */
+            align-items: center;
+            justify-content: center;
         }
 
         #projectModal.modal.active {
@@ -37,50 +37,37 @@
 
         .modal-content {
             background: white;
-            margin: 0 auto;
-            padding: 3rem 2rem 2rem 2rem;
+            margin: auto;
+            padding: 2.5rem 2rem 2rem 2rem;
             border-radius: 1rem;
             max-width: 800px;
             width: 90%;
-            transform: translateY(-20px);
+            max-height: 85%; /* Keep it within the reduced area */
+            transform: translateY(-50px);
             opacity: 0;
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
+            overflow-y: auto;
             position: relative;
-            /* Context for close button */
+            scrollbar-width: thin;
         }
 
-        .modal-content-inner {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            height: 100%;
-        }
-
-        .modal-content::-webkit-scrollbar {
-            display: none;
-            /* Chrome, Safari and Opera */
-        }
-
-        .modal.active .modal-content {
+        #projectModal.modal.active .modal-content {
             transform: translateY(0);
             opacity: 1;
         }
 
         .close-modal {
-            position: absolute !important;
-            top: 0.5rem !important;
-            right: 1rem !important;
-            font-size: 2.5rem !important;
-            color: #b5838d !important;
-            /* Themed color for visibility */
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2.5rem;
+            color: #b5838d;
             cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 100 !important;
-            line-height: 1;
-            font-weight: bold;
+            transition: transform 0.3s ease;
+            z-index: 100;
         }
 
         .close-modal:hover {
