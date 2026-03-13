@@ -11,8 +11,8 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-    <link rel="stylesheet" href="css/home.css?v=2.0">
-    <link rel="stylesheet" href="css/projects.css?v=2.0">
+    <link rel="stylesheet" href="css/home.css?v=2.1">
+    <link rel="stylesheet" href="css/projects.css?v=2.1">
     <style>
         #projectModal.modal {
             display: none;
@@ -64,14 +64,14 @@
 
         .close-modal {
             position: absolute;
-            top: 0.75rem;
-            right: 1rem;
+            top: 0.5rem;
+            right: 0.75rem;
             font-size: 2.5rem;
             color: #b5838d;
             cursor: pointer;
             transition: transform 0.3s ease;
-            z-index: 10002 !important; /* Ensure it stays above image */
-            text-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.5); /* Contrast against image */
+            z-index: 10002 !important;
+            text-shadow: 0 0 10px rgba(255,255,255,0.8);
             line-height: 1;
         }
 
@@ -243,6 +243,10 @@
             background: linear-gradient(45deg, #b5838d, #9a6b75);
         }
 
+        ::-webkit-scrollbar-button {
+            display: none;
+        }
+
         /* Firefox */
         * {
             scrollbar-width: thin;
@@ -350,8 +354,8 @@
         </div>
     </div>
 
-    <script src="js/header.js?v=2.0"></script>
-    <script src="js/hero.js?v=2.0"></script>
+    <script src="js/header.js?v=2.1"></script>
+    <script src="js/hero.js?v=2.1"></script>
     <script>
         // Project details data
         const projectDetails = {
@@ -502,7 +506,7 @@
         });
 
         // Load header
-        fetch('header.html?v=2.0')
+        fetch('header.html?v=2.1')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
