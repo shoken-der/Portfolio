@@ -11,8 +11,8 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-    <link rel="stylesheet" href="css/home.css?v=1.9">
-    <link rel="stylesheet" href="css/projects.css?v=1.9">
+    <link rel="stylesheet" href="css/home.css?v=2.0">
+    <link rel="stylesheet" href="css/projects.css?v=2.0">
     <style>
         #projectModal.modal {
             display: none;
@@ -27,13 +27,14 @@
             transition: opacity 0.3s ease;
             align-items: center;
             justify-content: center;
-            pointer-events: none; /* Do not block clicks when hidden */
+            pointer-events: none;
+            overflow: hidden; /* Prevent container scrollbar */
         }
 
         #projectModal.modal.active {
             display: flex;
             opacity: 1;
-            pointer-events: auto; /* Allow clicks when active */
+            pointer-events: auto;
         }
 
         .modal-content {
@@ -43,7 +44,7 @@
             border-radius: 1rem;
             max-width: 800px;
             width: 90%;
-            max-height: 85%; /* Keep it within the reduced area */
+            max-height: 90%; /* Increased for better fit */
             transform: translateY(-50px);
             opacity: 0;
             transition: all 0.3s ease;
@@ -53,6 +54,7 @@
             overflow-y: auto;
             position: relative;
             scrollbar-width: thin;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
         #projectModal.modal.active .modal-content {
@@ -62,13 +64,15 @@
 
         .close-modal {
             position: absolute;
-            top: 1rem;
-            right: 1.5rem;
+            top: 0.75rem;
+            right: 1rem;
             font-size: 2.5rem;
             color: #b5838d;
             cursor: pointer;
             transition: transform 0.3s ease;
-            z-index: 100;
+            z-index: 10002 !important; /* Ensure it stays above image */
+            text-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.5); /* Contrast against image */
+            line-height: 1;
         }
 
         .close-modal:hover {
@@ -346,8 +350,8 @@
         </div>
     </div>
 
-    <script src="js/header.js?v=1.9"></script>
-    <script src="js/hero.js?v=1.9"></script>
+    <script src="js/header.js?v=2.0"></script>
+    <script src="js/hero.js?v=2.0"></script>
     <script>
         // Project details data
         const projectDetails = {
@@ -498,7 +502,7 @@
         });
 
         // Load header
-        fetch('header.html?v=1.9')
+        fetch('header.html?v=2.0')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
