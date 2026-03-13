@@ -11,8 +11,8 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-    <link rel="stylesheet" href="css/home.css?v=1.8">
-    <link rel="stylesheet" href="css/projects.css?v=1.8">
+    <link rel="stylesheet" href="css/home.css?v=1.9">
+    <link rel="stylesheet" href="css/projects.css?v=1.9">
     <style>
         #projectModal.modal {
             display: none;
@@ -25,14 +25,15 @@
             z-index: 10001 !important;
             opacity: 0;
             transition: opacity 0.3s ease;
-            display: flex; /* Ensure centering works when active */
             align-items: center;
             justify-content: center;
+            pointer-events: none; /* Do not block clicks when hidden */
         }
 
         #projectModal.modal.active {
             display: flex;
             opacity: 1;
+            pointer-events: auto; /* Allow clicks when active */
         }
 
         .modal-content {
@@ -345,8 +346,8 @@
         </div>
     </div>
 
-    <script src="js/header.js?v=1.8"></script>
-    <script src="js/hero.js?v=1.8"></script>
+    <script src="js/header.js?v=1.9"></script>
+    <script src="js/hero.js?v=1.9"></script>
     <script>
         // Project details data
         const projectDetails = {
@@ -497,7 +498,7 @@
         });
 
         // Load header
-        fetch('header.html?v=1.8')
+        fetch('header.html?v=1.9')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
