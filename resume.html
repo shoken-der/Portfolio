@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Shokendra Singh</title>
+    <link rel="icon" href="assets/icons/icon3.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="css/home.css?v=1.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="bg-gradient-to-br from-[var(--peach-puff)] to-[var(--pastel-pink)] text-[var(--dark-text)] font-sans">
+    <div id="particles-js" class="fixed top-0 left-0 w-full h-full z-0"></div>
+    <div class="floating-elements absolute inset-0 z-1" id="floatingElements"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="pt-24 px-[10%] relative z-10 min-h-screen pb-16">
+        <section class="resume-section">
+            <div class="text-center mb-12" data-aos="fade-down">
+                <h1
+                    class="text-5xl mt-4 font-bold mb-4 bg-gradient-to-r from-[var(--pastel-pink)] to-[var(--dark-text)] bg-clip-text text-transparent">
+                    Resume
+                </h1>
+                <div
+                    class="w-24 h-1 bg-gradient-to-r from-[var(--pastel-pink)] to-[var(--dark-text)] mx-auto rounded-full">
+                </div>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-lg rounded-lg p-8 shadow-lg max-w-4xl mx-auto" data-aos="fade-up">
+                <div class="flex justify-between items-center mb-8 pb-4 border-b border-white/20">
+                    <div>
+                        <h2 class="text-3xl font-bold">Shokendra Singh</h2>
+                        <p class="text-xl text-gray-800">Software Developer</p>
+                    </div>
+                    <div class="relative group">
+                        <button
+                            class="bg-[var(--melon)] text-gray-900 px-6 py-3 rounded-full font-bold hover:bg-[var(--pastel-pink)] transition-all flex items-center gap-2">
+                            <i class="fas fa-download"></i> Download CV
+                        </button>
+                        <div
+                            class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden border border-gray-100">
+                            <a href="assets/docs/generalized_cv.pdf" download="Shokendra_Generalized_CV.pdf"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-[var(--melon)] transition-colors border-b border-gray-100">
+                                <i class="fas fa-file-alt mr-2 opacity-70"></i> Generalized CV
+                            </a>
+                            <a href="assets/docs/specialized_cv.pdf" download="Shokendra_Specialized_CV.pdf"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-[var(--melon)] transition-colors">
+                                <i class="fas fa-file-code mr-2 opacity-70"></i> Specialized CV
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                            <i class="fas fa-graduation-cap text-[var(--melon)]"></i> Education
+                        </h3>
+                        <div
+                            class="pl-9 relative before:content-[''] before:absolute before:left-[18px] before:top-[15px] before:bottom-[-20px] before:w-[2px] before:bg-white/20">
+                            <div
+                                class="relative before:content-[''] before:absolute before:left-[-27px] before:top-[8px] before:w-3 before:h-3 before:rounded-full before:bg-[var(--melon)]">
+                                <h4 class="text-xl font-bold">Bachelor of Technology</h4>
+                                <p>Lovely Professional University | 2023 - Present</p>
+                                <p class="text-sm opacity-80 mt-1 text-gray-800 font-semibold">CGPA: 8.12</p>
+                                <p class="text-sm opacity-80 mt-1">Focus on Software Engineering and Core Computing.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="pl-9 relative before:content-[''] before:absolute before:left-[18px] before:top-[15px] before:bottom-[-20px] before:w-[2px] before:bg-white/20 mt-6 md:mt-8">
+                            <div
+                                class="relative before:content-[''] before:absolute before:left-[-27px] before:top-[8px] before:w-3 before:h-3 before:rounded-full before:bg-[var(--melon)]">
+                                <h4 class="text-xl font-bold">Intermediate</h4>
+                                <p>Delhi Public School, Bulandshahar, UP | April 2022 - March 2023</p>
+                                <p class="text-sm opacity-80 mt-1 text-gray-800 font-semibold">Percentage: 82%</p>
+                            </div>
+                        </div>
+                        <div class="pl-9 relative mt-6 md:mt-8">
+                            <div
+                                class="relative before:content-[''] before:absolute before:left-[-27px] before:top-[8px] before:w-3 before:h-3 before:rounded-full before:bg-[var(--melon)]">
+                                <h4 class="text-xl font-bold">Matriculation</h4>
+                                <p>Delhi Public School, Bulandshahar, UP | April 2020 - March 2021</p>
+                                <p class="text-sm opacity-80 mt-1 text-gray-800 font-semibold">Percentage: 93%</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/header.js?v=1.1"></script>
+    <script>
+        fetch('header.html?v=1.1').then(r => r.text()).then(d => { document.getElementById('header-placeholder').innerHTML = d; });
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+
+</html>

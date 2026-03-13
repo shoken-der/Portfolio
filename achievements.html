@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements | Shokendra Singh</title>
+    <link rel="icon" href="assets/icons/icon3.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="css/home.css?v=1.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-[var(--peach-puff)] to-[var(--pastel-pink)] text-[var(--dark-text)] font-sans">
+    <div id="particles-js" class="fixed top-0 left-0 w-full h-full z-0"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="pt-24 px-[10%] relative z-10 min-h-screen pb-16">
+        <section class="achievements-section">
+            <div class="text-center mb-12" data-aos="fade-down">
+                <h1 class="text-5xl mt-4 font-bold mb-4 bg-gradient-to-r from-[var(--pastel-pink)] to-[var(--dark-text)] bg-clip-text text-transparent">
+                    Achievements
+                </h1>
+                <div class="w-24 h-1 bg-gradient-to-r from-[var(--pastel-pink)] to-[var(--dark-text)] mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-6 max-w-4xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-lg rounded-lg p-6 shadow-lg gap-6" data-aos="fade-up">
+                    <div class="flex items-center gap-6 w-full mb-4">
+                        <div class="bg-[var(--melon)] p-4 rounded-full text-white text-3xl flex-shrink-0 w-16 h-16 flex items-center justify-center">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <div class="flex-grow flex flex-col md:flex-row md:justify-between md:items-center gap-2">
+                            <h3 class="text-2xl font-bold">Summer Training – Java Core to Advance</h3>
+                            <span class="text-lg opacity-90 font-semibold text-[var(--dark-text)] md:whitespace-nowrap">June 2025 – July 2025</span>
+                        </div>
+                    </div>
+                    <div class="pl-4 md:pl-[5.5rem]">
+                        <ul class="list-disc space-y-3 opacity-90 text-justify ml-4 marker:text-[var(--melon)] text-lg">
+                            <li>The training focused on the concepts of java which covers core topics to advance level.</li>
+                            <li>Completed a comprehensive training program focused on Core to Advanced Java concepts, including OOP principles, Collections Framework, Exception Handling, Multithreading, JDBC.</li>
+                            <li>Engineered hands-on Java project, applying Core Java concepts to build end-to-end application. This project strengthened practical understanding of Core Java development and real-world application design, debugging, and optimization.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/header.js?v=1.1"></script>
+    <script>
+        fetch('header.html?v=1.1').then(r => r.text()).then(d => { document.getElementById('header-placeholder').innerHTML = d; });
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+</html>
