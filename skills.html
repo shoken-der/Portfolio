@@ -170,7 +170,7 @@
     <script src="js/hero.js?v=2.3"></script>
     <style>
         .skill-category {
-            @apply hover:bg-white/20 transition-all duration-300;
+            transition: all 0.3s;
             position: relative;
             overflow: visible;
             padding: 2.5rem;
@@ -181,21 +181,32 @@
         .skill-category:hover {
             transform: translateY(-5px);
             border-top: 4px solid var(--pastel-pink);
+            background-color: rgba(255, 255, 255, 0.2);
         }
         .skill-category::before {
             display: none;
         }
         .skill-item {
-            @apply flex items-center space-x-2 p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
             position: relative;
             overflow: visible;
             z-index: 2;
+        }
+        .skill-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
         .skill-item::after {
             display: none;
         }
         .category-header {
-            @apply border-b border-white/20 pb-4;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 1rem;
             position: relative;
             z-index: 2;
         }
