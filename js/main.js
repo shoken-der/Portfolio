@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (element.tagName === 'A' || element.tagName === 'BUTTON' || 
                 element.tagName === 'INPUT' || element.tagName === 'TEXTAREA' ||
                 element.tagName === 'SELECT' || element.classList.contains('download-btn') ||
-                element.classList.contains('badge-toggle')) {
+                element.classList.contains('badge-toggle') || 
+                element.classList.contains('view-details-btn') ||
+                element.classList.contains('close-modal')) {
                 return;
             }
 
@@ -20,24 +22,20 @@ document.addEventListener('DOMContentLoaded', function() {
             // Prevent image dragging
             if (element.tagName === 'IMG') {
                 element.draggable = false;
-                element.style.pointerEvents = 'none';
+                // Only disable pointer events if it's NOT inside a button/link
+                if (!element.closest('a') && !element.closest('button')) {
+                    element.style.pointerEvents = 'none';
+                }
             }
         });
     }
 
-    // Select all content sections
-    const contentSections = document.querySelectorAll('main, section, .hero, .about-section, .projects-section, .certifications-section, .skills-section, .resume-section, .contact-section');
+    // Select all content sections including the main area and potential modals
+    const contentSections = document.querySelectorAll('main, section, header, footer, .modal-content, [class*="-section"]');
     
     contentSections.forEach(section => {
         // Get all text and content elements within each section
         const elements = section.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, img, li');
         makeUnselectable(elements);
     });
-
-    // Make header content unselectable
-    const header = document.querySelector('header');
-    if (header) {
-        const headerElements = header.querySelectorAll('div, span, img');
-        makeUnselectable(headerElements);
-    }
 });
