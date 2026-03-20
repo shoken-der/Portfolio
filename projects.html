@@ -313,7 +313,7 @@
                     </div>
                     <div
                         class="thumbnail-container relative overflow-hidden rounded-lg mb-4 group-hover:shadow-md transition-all duration-300">
-                        <img src="assets/images/jconsole.jpg" alt="Jenkins Server Project"
+                        <img src="assets/images/jconsole.jpg" alt="Bank Account Console Project"
                             class="w-full h-48 object-cover rounded-lg transform group-hover:scale-105 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -327,6 +327,34 @@
                     <div class="flex gap-3 flex-wrap">
                         <button class="view-details-btn" data-project="jenkins">View Details</button>
                         <a href="https://github.com/shoken-der/BankiFy" target="_blank" rel="noopener noreferrer"
+                            class="view-details-btn flex items-center gap-2">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ConvoX -->
+                <div class="project-card bg-white/10 backdrop-blur-lg rounded-lg p-4 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-transparent hover:border-[#f8e1e4] relative overflow-hidden group"
+                    data-aos="fade-up" data-aos-delay="450">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
+                    </div>
+                    <div
+                        class="thumbnail-container relative overflow-hidden rounded-lg mb-4 group-hover:shadow-md transition-all duration-300 bg-gray-100 flex items-center justify-center">
+                        <img src="assets/images/convox.png" alt="ConvoX Project"
+                            onerror="this.src='https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop'"
+                            class="w-full h-48 object-cover rounded-lg transform group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                    </div>
+                    <h2
+                        class="text-xl font-semibold mb-2 text-[#2d3748] group-hover:text-[#1a202c] transition-colors duration-300">
+                        ConvoX</h2>
+                    <p class="text-gray-600 mb-2 group-hover:text-gray-700 transition-colors duration-300">Real-Time Messaging Platform</p>
+                    <div class="flex gap-3 flex-wrap">
+                        <button class="view-details-btn" data-project="convox">View Details</button>
+                        <a href="https://github.com/shoken-der/ConvoX" target="_blank" rel="noopener noreferrer"
                             class="view-details-btn flex items-center gap-2">
                             <i class="fab fa-github"></i> GitHub
                         </a>
@@ -371,30 +399,19 @@
                 tags: ["React", "NodeJS", "RESTful APIs", "Email Notifications"],
                 image: "assets/images/chatbot (1).jpg"
             },
-            rtos: {
-                title: "RTOS Security Event Logger",
-                description: "Python-based real-time security event logging system",
+            convox: {
+                title: "ConvoX – Real-Time Messaging Platform",
+                description: "Real-time, bi-directional communication platform featuring Socket.io and secure Firebase Authentication.",
                 details: [
-                    "Implemented real-time logging mechanisms using Python, ensuring minimal performance overhead while tracking security events",
-                    "Designed a graphical visualization module with Matplotlib, providing clear insights into security trends",
-                    "Integrated Flask-based API endpoints to facilitate remote access and management",
-                    "Optimized event processing with multi-threading for efficient resource utilization"
+                    "Engineered a robust MERN stack application featuring real-time communication via Socket.io and secure Firebase Authentication.",
+                    "Developed a low-latency messaging engine supporting instant message delivery, live typing indicators, and real-time read receipts with <50ms average latency.",
+                    "Implemented complex UI patterns including message threading (nested replies), emoji reactions, and a secure 10-minute message editing window.",
+                    "Optimized backend performance using Mongoose for efficient MongoDB indexing and paginated queries, reducing initial frontend load time by 40%.",
+                    "Integrated Cloudinary for distributed media storage with specialized Multer middleware."
                 ],
-                tags: ["Python", "Flask", "Matplotlib", "Multi-threading"],
-                image: "assets/images/rtos.png"
+                tags: ["React", "NodeJS", "Express", "MongoDB", "Socket.io"],
+                image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop"
             },
-            pipeline: {
-                title: "Chatbot",
-                description: "AI Based Chatbot for real-time sneakers update",
-                details: [
-                    "Developed by using python for automated sneakers tracking and updates",
-                    "Front-end built with Streamlit for a responsive user interface",
-                    "Deployed on Streamlit for scalabiility and reliability",
-                ],
-                tags: ["Python", "Streamlit"],
-                image: "assets/images/chatbot (1).jpg"
-            },
-
             jenkins: {
                 title: "Bank Account Console",
                 description: "Similates Simple Bank Account Facilities using OOPS",
