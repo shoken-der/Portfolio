@@ -10,11 +10,28 @@
 }
 
 /* Base Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
     background-color: var(--peach-puff);
+}
+
+main {
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+main::-webkit-scrollbar {
+    display: none;
 }
 
 header {
