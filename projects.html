@@ -279,34 +279,6 @@
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- KickSense -->
-                <div class="project-card bg-white/10 backdrop-blur-lg rounded-lg p-4 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-transparent hover:border-[#f8e1e4] relative overflow-hidden group"
-                    data-aos="fade-up">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
-                    </div>
-                    <div
-                        class="thumbnail-container relative overflow-hidden rounded-lg mb-4 group-hover:shadow-md transition-all duration-300">
-                        <img src="assets/images/chatbot (1).jpg" alt="KickSense Project"
-                            class="w-full h-48 object-cover rounded-lg transform group-hover:scale-105 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        </div>
-                    </div>
-                    <h2
-                        class="text-xl font-semibold mb-2 text-[#2d3748] group-hover:text-[#1a202c] transition-colors duration-300">
-                        KickSense</h2>
-                    <p class="text-gray-600 mb-2 group-hover:text-gray-700 transition-colors duration-300">Full-stack
-                        sneaker price tracking platform with real-time alerts</p>
-                    <div class="flex gap-3 flex-wrap">
-                        <button class="view-details-btn" data-project="kicksense">View Details</button>
-                        <a href="https://github.com/shoken-der/KickSense-Full-Stack-Sneaker-Price-Tracking-Platform"
-                            target="_blank" rel="noopener noreferrer" class="view-details-btn flex items-center gap-2">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
-                </div>
-
                 <!-- Bank Account Console -->
                 <div class="project-card bg-white/10 backdrop-blur-lg rounded-lg p-4 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-transparent hover:border-[#f8e1e4] relative overflow-hidden group"
                     data-aos="fade-up" data-aos-delay="300">
@@ -323,9 +295,9 @@
                     </div>
                     <h2
                         class="text-xl font-semibold mb-2 text-[#2d3748] group-hover:text-[#1a202c] transition-colors duration-300">
-                        Bank Account Console</h2>
-                    <p class="text-gray-600 mb-2 group-hover:text-gray-700 transition-colors duration-300">Simulates
-                        Simple Bank Account Facilities using OOPS</p>
+                        BankiFy</h2>
+                    <p class="text-gray-600 mb-2 group-hover:text-gray-700 transition-colors duration-300">Core banking
+                        backend API using Spring Boot, REST, and JPA</p>
                     <div class="flex gap-3 flex-wrap">
                         <button class="view-details-btn" data-project="jenkins">View Details</button>
                         <a href="https://github.com/shoken-der/BankiFy" target="_blank" rel="noopener noreferrer"
@@ -391,39 +363,30 @@
     <script>
         // Project details data
         const projectDetails = {
-            kicksense: {
-                title: "KickSense",
-                description: "Full-stack sneaker price tracking platform with real-time alerts and market insights.",
-                details: [
-                    "Designed and built a scalable full-stack platform tracking 50+ sneaker SKUs, enabling real-time price monitoring and market insights. Improved overall processing efficiency by ~40%",
-                    "Implemented a real-time notification system (email) to deliver personalized price-drop alerts to users",
-                    "Developed a modular backend architecture with RESTful APIs to support high-volume product and user data efficiently"
-                ],
-                tags: ["React", "NodeJS", "RESTful APIs", "Email Notifications"],
-                image: "assets/images/chatbot (1).jpg"
-            },
+
             convox: {
                 title: "ConvoX – Real-Time Messaging Platform",
-                description: "Real-time, bi-directional communication platform featuring Socket.io and secure Firebase Authentication.",
+                description: "Real-time chat platform using React, Spring Boot, WebSockets and MySQL.",
                 details: [
-                    "Engineered a robust MERN stack application featuring real-time communication via Socket.io and secure Firebase Authentication.",
-                    "Developed a low-latency messaging engine supporting instant message delivery, live typing indicators, and real-time read receipts with <50ms average latency.",
-                    "Implemented complex UI patterns including message threading (nested replies), emoji reactions, and a secure 10-minute message editing window.",
-                    "Optimized backend performance using Mongoose for efficient MongoDB indexing and paginated queries, reducing initial frontend load time by 40%.",
-                    "Integrated Cloudinary for distributed media storage with specialized Multer middleware."
+                    "Built ConvoX, a real-time chat platform using React, Spring Boot, WebSockets and MySQL, delivering sub-50ms message latency across concurrent sessions.",
+                    "Engineered secure, stateless authentication with Spring Security and JWT, safeguarding APIs and enabling scalable, role-based access control.",
+                    "Developed event-driven real-time features (typing indicators, read receipts, replies, reactions, media messaging), ensuring consistent cross-client synchronization.",
+                    "Reduced chat load latency and UI flicker by optimizing state management, caching, and pagination, enabling smooth, navigation.",
+                    "Outcome: Optimized media delivery pipeline with asynchronous processing and compression, improving load performance and enhancing UX across low-bandwidth conditions."
                 ],
-                tags: ["React", "NodeJS", "Express", "MongoDB", "Socket.io"],
+                tags: ["React.js", "Spring Boot", "Spring Security", "JWT", "WebSockets", "MySQL", "REST APIs"],
                 image: "assets/images/ConvoX.png"
             },
             jenkins: {
-                title: "Bank Account Console",
-                description: "Similates Simple Bank Account Facilities using OOPS",
+                title: "BankiFy",
+                description: "Core banking backend operations using Spring Boot, REST APIs, and JPA.",
                 details: [
-                    "Developed a console application simulating bank account operations using Java OOP principles",
-                    "Implemented features like account creation, balance inquiry, deposits, and withdrawls",
-                    "Utilized Java's OOP concepts such as iheritance, polymorphism, and encapsulation to ensure code reusablity and maintainability",
+                    "Architected and delivered 15+ RESTful APIs using Spring Boot for core banking operations (accounts, transactions, transfers), enforcing ACID-compliant workflows with @Transactional to ensure consistency under concurrent requests.",
+                    "Designed a scalable backend using layered architecture (Controller–Service–Repository) with Spring Data JPA and Hibernate, applying DTO abstraction to decouple business logic from persistence models and enhance security.",
+                    "Implemented centralized exception handling with @ControllerAdvice, standardizing error responses into structured formats and improving API reliability and client-side integration.",
+                    "Outcome: Improved system robustness and developer efficiency through comprehensive API validation, optimized query performance, and consistent HTTP standards across all endpoints."
                 ],
-                tags: ["JAVA", "OOPS"],
+                tags: ["Java", "Spring Boot", "Spring Data JPA", "Hibernate ORM", "MySQL", "REST API Design", "OOPS"],
                 image: "assets/images/jconsole.jpg"
             }
         };
